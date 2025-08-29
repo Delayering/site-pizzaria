@@ -137,44 +137,44 @@
           nav {
             display: flex;
             flex-direction: column;
-            padding: 5px 0 !important; /* Mais compacto */
+            padding: 5px 0 !important;
           }
           
            nav a {
-    display: block;
-    margin: 5px 0 !important; /* Espaçamento reduzido */
-    padding: 8px 10px !important; /* Menor padding */
-    font-size: 0.9rem !important; /* Fonte menor */
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  
-  nav a::after {
-    display: none;
-  }
-  
-  nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(3px);
-  }
-}
+            display: block;
+            margin: 5px 0 !important;
+            padding: 8px 10px !important;
+            font-size: 0.9rem !important;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
+          
+          nav a::after {
+            display: none;
+          }
+          
+          nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(3px);
+          }
+        }
 
-/* Ajuste extra para telas muito pequenas */
-@media (max-width: 480px) {
-  nav {
-    padding: 3px 0 !important;
-  }
-  
-  nav a {
-    font-size: 0.85rem !important;
-    padding: 6px 8px !important;
-    margin: 3px 0 !important;
-  }
-}
+        /* Ajuste extra para telas muito pequenas */
+        @media (max-width: 480px) {
+          nav {
+            padding: 3px 0 !important;
+          }
+          
+          nav a {
+            font-size: 0.85rem !important;
+            padding: 6px 8px !important;
+            margin: 3px 0 !important;
+          }
+        }
         
         /* Hero section melhorada */
         .hero {
@@ -677,32 +677,42 @@
             .modal-body {
                 padding: 15px;
             }
+        }
 
-            /* Menu compacto no scroll */
+        /* ===== MENU COMPACTO NO SCROLL ===== */
         nav.compacted {
-            padding: 5px 0 !important;
+            padding: 8px 0 !important;
             background: var(--primary-dark) !important;
+            transition: all 0.3s ease;
         }
 
         nav.compacted a {
-            font-size: 0.9rem !important;
-            padding: 6px 8px !important;
+            font-size: 0.95rem !important;
+            padding: 4px 8px !important;
             margin: 0 10px !important;
         }
 
         /* Versão mobile do menu compacto */
         @media (max-width: 768px) {
             nav.compacted {
-                padding: 3px 0 !important;
+                padding: 5px 0 !important;
             }
             
             nav.compacted a {
-                font-size: 0.8rem !important;
-                padding: 5px 8px !important;
-                margin: 2px 0 !important;
+                font-size: 0.85rem !important;
+                padding: 3px 6px !important;
+                margin: 0 5px !important;
+                background: transparent !important;
             }
         }
 
+        /* Ajuste para telas muito pequenas */
+        @media (max-width: 480px) {
+            nav.compacted a {
+                font-size: 0.8rem !important;
+                padding: 2px 4px !important;
+                margin: 0 3px !important;
+            }
         }
     </style>
 </head>
@@ -727,7 +737,7 @@
         <img src="images/pizzamarke.jpg" alt="Imagem de pizza deliciosa">
         <div class="hero-overlay">
             <h2>As Melhores Pizzas da Região</h2>
-            <p>Experimente nosso cardápio variado com ingredientes frescos e receitas tradicionais</p>
+            <p>Experimente nosso cardápio variado com ingredientes frescos and receitas tradicionais</p>
         </div>
     </div>
     
@@ -887,7 +897,7 @@
             'frango-bbq': {
                 title: 'Frango com BBQ',
                 price: 'R$ 13,49',
-                description: 'A combinação perfeita entre o sabor defumado do molho barbecue e o frango grelhado suculento. Uma pizza que conquista pelo equilíbrio de sabores doces e salgados.',
+                description: 'A combinação perfeita entre o sabor defumado do molho barbecue e o frango grelhado suculento. Uma pizza que conquista pelo equilíbrio de sabores doces and salgados.',
                 ingredients: ['Molho barbecue', 'Mussarela', 'Frango grelhado', 'Cebola roxa', 'Salsinha'],
                 image: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
             }
@@ -968,8 +978,6 @@
             
             lastScrollTop = scrollTop;
         });
-    </script>
-
     </script>
 </body>
 </html>
