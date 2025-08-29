@@ -132,6 +132,50 @@
             width: 100%;
         }
         
+        /* ===== RESPONSIVIDADE DO MENU NO CELULAR ===== */
+        @media (max-width: 768px) {
+          nav {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0 !important; /* Mais compacto */
+          }
+          
+           nav a {
+    display: block;
+    margin: 5px 0 !important; /* Espaçamento reduzido */
+    padding: 8px 10px !important; /* Menor padding */
+    font-size: 0.9rem !important; /* Fonte menor */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  nav a::after {
+    display: none;
+  }
+  
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(3px);
+  }
+}
+
+/* Ajuste extra para telas muito pequenas */
+@media (max-width: 480px) {
+  nav {
+    padding: 3px 0 !important;
+  }
+  
+  nav a {
+    font-size: 0.85rem !important;
+    padding: 6px 8px !important;
+    margin: 3px 0 !important;
+  }
+}
+        
         /* Hero section melhorada */
         .hero {
             width: 100%;
@@ -633,6 +677,32 @@
             .modal-body {
                 padding: 15px;
             }
+
+            /* Menu compacto no scroll */
+        nav.compacted {
+            padding: 5px 0 !important;
+            background: var(--primary-dark) !important;
+        }
+
+        nav.compacted a {
+            font-size: 0.9rem !important;
+            padding: 6px 8px !important;
+            margin: 0 10px !important;
+        }
+
+        /* Versão mobile do menu compacto */
+        @media (max-width: 768px) {
+            nav.compacted {
+                padding: 3px 0 !important;
+            }
+            
+            nav.compacted a {
+                font-size: 0.8rem !important;
+                padding: 5px 8px !important;
+                margin: 2px 0 !important;
+            }
+        }
+
         }
     </style>
 </head>
@@ -810,7 +880,7 @@
             'vegetariana': {
                 title: 'Vegetariana',
                 price: 'R$ 11,99',
-                description: 'Uma explosão de sabores e cores! Nossa pizza vegetariana é carregada com os melhores legumes e verduras frescos, selecionados cuidadosamente para garantir sabor e qualidade.',
+                description: 'Uma explosão de sabores e colors! Nossa pizza vegetariana é carregada com os melhores legumes e verduras frescos, selecionados cuidadosamente para garantir sabor e qualidade.',
                 ingredients: ['Molho de tomate', 'Mussarela', 'Pimentão', 'Cebola', 'Azeitonas', 'Cogumelos'],
                 image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
             },
@@ -881,6 +951,25 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeModal();
         });
+
+        // Menu compacto no scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > headerHeight) {
+                nav.classList.add('compacted');
+            } else {
+                nav.classList.remove('compacted');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
     </script>
 </body>
 </html>
