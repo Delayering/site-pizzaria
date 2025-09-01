@@ -19,13 +19,13 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--secondary);
@@ -33,11 +33,11 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         body.modal-open {
             overflow: hidden;
         }
-        
+
         /* Header melhorado */
         header {
             background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
@@ -47,7 +47,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         header::before {
             content: "";
             position: absolute;
@@ -58,12 +58,12 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
             transform: rotate(30deg);
         }
-        
+
         .header-content {
             position: relative;
             z-index: 2;
         }
-        
+
         header img {
             margin: 15px auto;
             border-radius: 50%;
@@ -74,23 +74,23 @@
             border: 3px solid white;
             transition: var(--transition);
         }
-        
+
         header img:hover {
             transform: scale(1.05);
         }
-        
+
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
-        
+
         header p {
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         /* Navegação melhorada */
         nav {
             background: var(--primary);
@@ -101,7 +101,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        
+
         nav a {
             color: var(--light);
             text-decoration: none;
@@ -112,7 +112,7 @@
             position: relative;
             padding: 5px 0;
         }
-        
+
         nav a::after {
             content: "";
             position: absolute;
@@ -123,15 +123,15 @@
             background: var(--light);
             transition: var(--transition);
         }
-        
+
         nav a:hover {
             color: #fffbe2;
         }
-        
+
         nav a:hover::after {
             width: 100%;
         }
-        
+
         /* ===== RESPONSIVIDADE DO MENU NO CELULAR ===== */
         @media (max-width: 768px) {
           nav {
@@ -139,7 +139,7 @@
             flex-direction: column;
             padding: 5px 0 !important;
           }
-          
+
            nav a {
             display: block;
             margin: 5px 0 !important;
@@ -152,11 +152,11 @@
             margin-right: auto;
             text-align: center;
           }
-          
+
           nav a::after {
             display: none;
           }
-          
+
           nav a:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateX(3px);
@@ -168,14 +168,14 @@
           nav {
             padding: 3px 0 !important;
           }
-          
+
           nav a {
             font-size: 0.85rem !important;
             padding: 6px 8px !important;
             margin: 3px 0 !important;
           }
         }
-        
+
         /* Hero section melhorada */
         .hero {
             width: 100%;
@@ -187,14 +187,14 @@
             align-items: center;
             position: relative;
         }
-        
+
         .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-        
+
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -210,19 +210,19 @@
             text-align: center;
             padding: 20px;
         }
-        
+
         .hero-overlay h2 {
             font-size: 2.5rem;
             margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
+
         .hero-overlay p {
             font-size: 1.2rem;
             max-width: 700px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
-        
+
         /* Container principal */
         .container {
             max-width: 1200px;
@@ -232,7 +232,7 @@
             border-radius: 15px;
             box-shadow: var(--shadow);
         }
-        
+
         h2 {
             color: var(--primary-dark);
             margin-bottom: 25px;
@@ -241,7 +241,7 @@
             padding-bottom: 10px;
             text-align: center;
         }
-        
+
         h2::after {
             content: "";
             position: absolute;
@@ -253,7 +253,7 @@
             background: var(--primary);
             border-radius: 3px;
         }
-        
+
         /* Menu melhorado */
         .menu {
             display: grid;
@@ -261,7 +261,7 @@
             gap: 30px;
             margin-bottom: 40px;
         }
-        
+
         .card {
             border: 1px solid #f3e6c4;
             border-radius: 12px;
@@ -274,24 +274,24 @@
             height: 100%;
             cursor: pointer;
         }
-        
+
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 20px rgba(233, 199, 7, 0.2);
         }
-        
+
         .card h3 {
             margin-top: 0;
             color: var(--primary);
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
-        
+
         .card p {
             flex-grow: 1;
             margin-bottom: 15px;
         }
-        
+
         .price {
             color: var(--primary-dark);
             font-size: 1.3rem;
@@ -300,13 +300,13 @@
             border-radius: 5px;
             display: inline-block;
         }
-        
+
         .rating {
             color: #f39c12;
             font-size: 1.2rem;
             margin-top: 10px;
         }
-        
+
         /* Modal */
         .modal {
             display: none;
@@ -322,14 +322,14 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .modal.active {
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 1;
         }
-        
+
         .modal-content {
             background-color: white;
             border-radius: 15px;
@@ -340,23 +340,23 @@
             transform: translateY(50px);
             transition: transform 0.4s ease;
         }
-        
+
         .modal.active .modal-content {
             transform: translateY(0);
         }
-        
+
         .modal-header {
             position: relative;
             height: 250px;
             overflow: hidden;
         }
-        
+
         .modal-header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .modal-close {
             position: absolute;
             top: 15px;
@@ -373,49 +373,49 @@
             cursor: pointer;
             transition: var(--transition);
         }
-        
+
         .modal-close:hover {
             background: rgba(0, 0, 0, 0.8);
             transform: rotate(90deg);
         }
-        
+
         .modal-body {
             padding: 25px;
         }
-        
+
         .modal-title {
             color: var(--primary-dark);
             margin-bottom: 10px;
             font-size: 1.8rem;
         }
-        
+
         .modal-price {
             color: var(--primary);
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
-        
+
         .modal-description {
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        
+
         .modal-ingredients {
             margin-bottom: 25px;
         }
-        
+
         .modal-ingredients h4 {
             margin-bottom: 10px;
             color: var(--primary-dark);
         }
-        
+
         .ingredients-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .ingredient-tag {
             background: rgba(236, 146, 9, 0.15);
             color: var(--primary-dark);
@@ -423,13 +423,13 @@
             border-radius: 20px;
             font-size: 0.9rem;
         }
-        
+
         .modal-actions {
             display: flex;
             gap: 15px;
             margin-top: 25px;
         }
-        
+
         .btn {
             padding: 12px 25px;
             border-radius: 8px;
@@ -439,57 +439,57 @@
             border: none;
             font-size: 1rem;
         }
-        
+
         .btn-primary {
             background: var(--primary);
             color: white;
             flex: 2;
         }
-        
+
         .btn-primary:hover {
             background: var(--primary-dark);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
             flex: 1;
         }
-        
+
         .btn-secondary:hover {
             background: rgba(236, 146, 9, 0.1);
         }
-        
+
         /* Seções Sobre, Parceiros, Avaliações e Contato */
         section {
             margin-bottom: 40px;
         }
-        
+
         #about, #partners, #evaluations, #contact {
             background: #fffbe2;
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
-        
+
         .partner-logo {
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: var(--primary);
         }
-        
+
         #contact a {
             color: var(--primary-dark);
             text-decoration: none;
             transition: var(--transition);
         }
-        
+
         #contact a:hover {
             color: var(--accent);
             text-decoration: underline;
         }
-        
+
         /* Footer melhorado */
         footer {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
@@ -500,7 +500,7 @@
             font-size: 1rem;
             letter-spacing: 1px;
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -509,24 +509,24 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .social-links {
             margin: 15px 0;
             display: flex;
             gap: 20px;
         }
-        
+
         .social-links a {
             color: white;
             font-size: 1.5rem;
             transition: var(--transition);
         }
-        
+
         .social-links a:hover {
             color: var(--accent);
             transform: translateY(-3px);
         }
-        
+
         /* Botão de WhatsApp flutuante */
         .whatsapp-float {
             position: fixed;
@@ -547,12 +547,12 @@
             transition: var(--transition);
             animation: pulse 2s infinite;
         }
-        
+
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
         }
-        
+
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
@@ -564,14 +564,14 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-        
+
         /* Media Queries para responsividade */
         @media (max-width: 992px) {
             nav a {
                 margin: 0 10px;
                 font-size: 1rem;
             }
-            
+
             .modal-content {
                 max-width: 90%;
             }
@@ -610,58 +610,58 @@
             text-align: center;
             color: #888;
             font-size: 0.9rem;
-
+}
 
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
             }
-            
+
             header p {
                 font-size: 1rem;
             }
-            
+
             nav a {
                 display: inline-block;
                 margin: 0 8px;
                 font-size: 0.9rem;
             }
-            
+
             .hero {
                 height: 40vh;
             }
-            
+
             .hero-overlay h2 {
                 font-size: 1.8rem;
             }
-            
+
             .hero-overlay p {
                 font-size: 1rem;
             }
-            
+
             .container {
                 padding: 20px 15px;
                 margin: 20px auto;
                 border-radius: 10px;
             }
-            
+
             h2 {
                 font-size: 1.6rem;
             }
-            
+
             .menu {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .card {
                 padding: 15px;
             }
-            
+
             .modal-header {
                 height: 200px;
             }
-            
+
             .modal-actions {
                 flex-direction: column;
             }
@@ -671,36 +671,36 @@
             header h1 {
                 font-size: 1.8rem;
             }
-            
+
             nav {
                 padding: 10px 0;
             }
-            
+
             nav a {
                 display: block;
                 margin: 5px 0;
             }
-            
+
             .hero {
                 height: 30vh;
             }
-            
+
             .hero-overlay h2 {
                 font-size: 1.5rem;
             }
-            
+
             h2 {
                 font-size: 1.4rem;
             }
-            
+
             .container {
                 padding: 15px 10px;
             }
-            
+
             #about, #partners, #evaluations, #contact {
                 padding: 15px;
             }
-            
+
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -708,7 +708,7 @@
                 right: 20px;
                 font-size: 25px;
             }
-            
+
             .modal-body {
                 padding: 15px;
             }
@@ -732,7 +732,7 @@
             nav.compacted {
                 padding: 5px 0 !important;
             }
-            
+
             nav.compacted a {
                 font-size: 0.85rem !important;
                 padding: 3px 6px !important;
@@ -759,7 +759,7 @@
             <p>Pizzas deliciosas, feitas fresquinhas todos os dias!</p>
         </div>
     </header>
-    
+
     <nav>
         <a href="#menu">Cardápio</a>
         <a href="#about">Sobre</a>
@@ -767,7 +767,7 @@
         <a href="#evaluations">Avaliações</a>
         <a href="#contact">Contato</a>
     </nav>
-    
+
     <div class="hero">
         <img src="images/pizzamarke.jpg" alt="Imagem de pizza deliciosa">
         <div class="hero-overlay">
@@ -775,7 +775,7 @@
             <p>Experimente nosso cardápio variado com ingredientes frescos and receitas tradicionais</p>
         </div>
     </div>
-    
+
     <div class="container">
         <section id="menu">
             <h2>Nosso Cardápio</h2>
@@ -802,7 +802,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="about">
             <h2>Sobre Nós</h2>
             <p>
@@ -811,7 +811,7 @@
                 Nossa missão é levar sabor e qualidade à sua mesa, com muito carinho e dedicação.
             </p>
         </section>
-        
+
         <section id="partners">
             <h2>Nossos Parceiros</h2>
             <div class="menu">
@@ -832,7 +832,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="evaluations">
             <h2>Avaliações dos Clientes</h2>
             <div class="menu">
@@ -905,7 +905,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="contact">
             <h2>Contato</h2>
             <p>
@@ -917,7 +917,7 @@
             </p>
         </section>
     </div>
-    
+
     <!-- Modal para detalhes da pizza -->
     <div class="modal" id="pizzaModal">
         <div class="modal-content">
@@ -929,12 +929,12 @@
                 <h3 class="modal-title" id="modalTitle"></h3>
                 <div class="modal-price" id="modalPrice"></div>
                 <p class="modal-description" id="modalDescription"></p>
-                
+
                 <div class="modal-ingredients">
                     <h4>Ingredientes:</h4>
                     <div class="ingredients-list" id="modalIngredients"></div>
                 </div>
-                
+
                 <div class="modal-actions">
                     <button class="btn btn-primary" onclick="orderPizza()">Fazer Pedido</button>
                     <button class="btn btn-secondary" onclick="closeModal()">Voltar ao Cardápio</button>
@@ -942,7 +942,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Sales Pizzaria. Todos os direitos reservados.</p>
@@ -953,7 +953,7 @@
             </div>
         </div>
     </footer>
-    
+
     <a href="https://wa.me/551934567890?text=Olá! Gostaria de fazer um pedido." class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
         📱
     </a>
@@ -1010,13 +1010,13 @@
         function openModal(pizzaId) {
             const pizza = pizzaData[pizzaId];
             if (!pizza) return;
-            
+
             document.getElementById('modalTitle').textContent = pizza.title;
             document.getElementById('modalPrice').textContent = pizza.price;
             document.getElementById('modalDescription').textContent = pizza.description;
             document.getElementById('modalImage').src = pizza.image;
             document.getElementById('modalImage').alt = `Imagem da pizza ${pizza.title}`;
-            
+
             // Preencher ingredientes
             const ingredientsContainer = document.getElementById('modalIngredients');
             ingredientsContainer.innerHTML = '';
@@ -1026,7 +1026,7 @@
                 span.textContent = ingredient;
                 ingredientsContainer.appendChild(span);
             });
-            
+
             // Mostrar modal
             document.body.classList.add('modal-open');
             document.getElementById('pizzaModal').classList.add('active');
@@ -1057,13 +1057,13 @@
 
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             if (scrollTop > headerHeight) {
                 nav.classList.add('compacted');
             } else {
                 nav.classList.remove('compacted');
             }
-            
+
             lastScrollTop = scrollTop;
         });
     </script>
