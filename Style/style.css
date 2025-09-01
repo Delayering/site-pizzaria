@@ -9,6 +9,11 @@
     --transition: all 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -711,8 +716,8 @@ footer {
     }
 
     header img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .hero-overlay h2 {
