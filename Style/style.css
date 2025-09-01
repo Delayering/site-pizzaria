@@ -83,9 +83,9 @@ header p {
 /* ===== MENU SUPERIOR OTIMIZADO ===== */
 nav {
     background: var(--primary);
-    padding: 15px 0;
+    padding: 5px 0;
     text-align: center;
-    position: relative;
+    position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -104,7 +104,7 @@ nav {
 nav a {
     color: var(--light);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 5px 15px;
     font-weight: 600;
     font-size: 1rem;
     transition: var(--transition);
@@ -119,13 +119,13 @@ nav a:hover {
 
 /* Menu Hamburger para Mobile */
 .menu-toggle {
-    display: none;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    cursor:col-resize;
     margin: 0 auto 10px;
 }
 
@@ -187,7 +187,7 @@ nav a:hover {
 
 /* Container principal */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 40px auto;
     background: var(--light);
     padding: 40px 30px;
@@ -701,7 +701,7 @@ footer {
 }
 
 /* Para telas muito pequenas (como 200px) */
-@media (max-width: 320px) {
+@media (max-width: 500px) {
     header h1 {
         font-size: 1.5rem;
     }
@@ -724,7 +724,7 @@ footer {
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.9rem;
     }
 
     .card h3 {
