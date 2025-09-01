@@ -1,31 +1,32 @@
-const card = document.getElementById("card-helena");
+ // Menu hamburger para mobile
+    document.getElementById('menuToggle').addEventListener('click', function() {
+    const navContainer = document.getElementById('navContainer');
+    navContainer.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
 
-function spawnHeart(x, y) {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.textContent = "❤️";
+    // Fechar menu ao clicar em um link (apenas mobile)
+    document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            document.getElementById('navContainer').classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+});
 
-    const offsetX = Math.random() * 40 - 20;
-    const offsetY = Math.random() * 40 - 20;
-
-    heart.style.left = `${x + offsetX}px`;
-    heart.style.top = `${y + offsetY}px`;
-
-    card.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 1000);
+    // Ajustar menu conforme redimensionamento da tela
+    function handleResize() {
+    const navContainer = document.getElementById('navContainer');
+    if (window.innerWidth > 768) {
+    navContainer.style.display = 'flex';
+} else {
+    navContainer.style.display = 'none';
+    navContainer.classList.remove('active');
+    document.body.classList.remove('menu-open');
+}
 }
 
-card.addEventListener("click", function (e) {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    for (let i = 0; i < 6; i++) {
-        setTimeout(() => {
-            spawnHeart(x, y);
-        }, i * 150); // espaçamento entre corações
-    }
-});
+    // Inicializar na carga da página
+    window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
