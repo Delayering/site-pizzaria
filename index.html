@@ -14,7 +14,7 @@
             --primary-dark: #d35400;
             --secondary: #100e18;
             --light: #f8f8f6;
-            --accent: #ec9209;
+            --accent: #ecac09;
             --text: #333333;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
@@ -576,7 +576,42 @@
                 max-width: 90%;
             }
         }
-        
+
+        #card-helena {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #ff4081;
+            animation: floatUp 1s ease-out forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(1.5) rotate(10deg);
+            }
+        }
+
+        .message {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -631,7 +666,7 @@
                 flex-direction: column;
             }
         }
-        
+
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.8rem;
@@ -816,11 +851,53 @@
                     <p>"Pizza muito boa, massa deliciosa e recheio na medida certa! Eu meu marido amamos."</p>
                     <div class="rating">★★★★★</div>
                 </div>
-                <div class="card">
+                <div class="card destaque" id="card-helena">
                     <h3>Helena C.</h3>
                     <p>"Meu namorado me levou pra essa pizzaria no aniversário de namoro de 3 anos, definitivamente um dos melhores locais para ficar de amorzinho com o parceiro e comer uma boa pizza:). Não é só uma pizzaria, é um momento, e é esse momento que vamos guardar em nossos corações!"</p>
                     <div class="rating">★★★★★</div>
                 </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const card = document.getElementById("card-helena");
+
+                        function spawnHeart(x, y) {
+                            const heart = document.createElement("div");
+                            heart.classList.add("heart");
+                            heart.textContent = "❤️";
+
+                            // Aumentei o offset para espalhar mais os corações
+                            const offsetX = Math.random() * 60 - 40;
+                            const offsetY = Math.random() * 60 - 40;
+
+                            heart.style.left = `${x + offsetX}px`;
+                            heart.style.top = `${y + offsetY}px`;
+
+                            // Adicionei uma rotação aleatória para mais romanticidade
+                            const rotation = Math.random() * 95 - 10;
+                            heart.style.transform = `rotate(${rotation}deg)`;
+
+                            card.appendChild(heart);
+
+                            setTimeout(() => {
+                                heart.remove();
+                            }, 1010);
+                        }
+
+                        card.addEventListener("click", function (e) {
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+
+                            for (let i = 0; i < 5; i++) {
+                                setTimeout(() => {
+                                    spawnHeart(x, y);
+                                }, i * 150);
+                            }
+                        });
+                    });
+                </script>
+
                 <div class="card">
                     <h3>Richard F.</h3>
                     <p>"Ambiente aconchegante e pizzas deliciosas. Deb e eu iremos voltar, degustar e aproveitar o momento, muito bom."</p>
